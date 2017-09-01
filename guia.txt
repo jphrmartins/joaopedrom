@@ -1,8 +1,0 @@
-git clone - "baixa" o repositório do github
-git status - vê as modificaçõs
-git add - adiciona mudanças
-git commit - adiciona no HEAD, cria uma marco na história
-git log - histórico de commits
-git push - envia/atualiza o repositório do github
-git pull - atualiza o repositório local
-git checkout - retira as modificações adicionadas
