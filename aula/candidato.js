@@ -3,22 +3,22 @@ module.exports = (function () {
         this.nome;
         this.codigo;
         this.nomePartido;
-        this.quantdadeVotos = 0;
-    }    
+        this.quantidadeDeVotos = 0;
+    }
     Candidato.prototype.setNome = function(novoNome) {
         this.nome = novoNome;
     }
-    Candidato.prototype.setCodigo = function(novoCodigo) { 
+    Candidato.prototype.setCodigo = function(novoCodigo) {
         this.codigo = novoCodigo;
     }
     Candidato.prototype.setNomePartdo = function(novoNomePartido) {
         this.nomePartido = novoNomePartido;
     }
-    Candidato.prototype.adicionarVoto = function() {
-        this.quantdadeVotos++;
+    Candidato.prototype.adicionarVotos = function() {
+        this.quantidadeDeVotos++;
     }
-    Candidato.prototype.getAdicionarVoto = function() {
-        return this.adicionarVoto;
+    Candidato.prototype.getQuantidadeDeVotos = function() {
+        return this.quantidadeDeVotos;
     }
     Candidato.prototype.getNome = function() {
         return this.nome;

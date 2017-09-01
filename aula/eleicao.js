@@ -5,7 +5,7 @@ module.exports = (function () {
     }
     Eleicao.prototype.setAno = function(novoAno) {
         this.ano = novoAno;
-    } 
+    }
     Eleicao.prototype.addCandidatos = function(candidato) {
         this.candidatos.push(candidato);
     }
