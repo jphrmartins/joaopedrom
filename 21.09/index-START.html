@@ -66,21 +66,22 @@
       audio.currentTime = 0;
       audio.play();
     }
-    if(e.code === 'KeyX'){
+    if(e.code === 'KeyB'){
       fullS();
     }
   }
-  function fullS(e){
+  function fullG(){
     if(ativo === false){
       ativo = true;
-      play = setInterval(playS, 950);
+      play = setInterval(playG, 950);
     } else {
     ativo = false;
     clearInterval(play);
     }
   }
-  function playS() {
-    var audio = document.querySelector('#KeyS');
+  function playG() {
+    var audio = document.querySelector('#KeyG');
+    audio.currentTime = 0;
     audio.play();
   }
   document.addEventListener("keypress", click);
