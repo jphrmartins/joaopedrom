@@ -5,7 +5,7 @@
 
     app.config(function ($routeProvider) {
       $routeProvider
-        .when('soma', {
+        .when('/soma', {
           templateUrl: 'soma.html'
         })
         .when('/subtrair', {

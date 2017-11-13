@@ -1,7 +1,7 @@
 (function () {
   'use strict'
 
-  angular.module('todoList').controller('calculadoraControl', function ($scope) {
+  angular.module('calculadora').controller('calculadoraControl', function ($scope) {
     $scope.calculo = {valorA: 0, valorB: 0, resultado: ''};
 
     $scope.somar = function (calculo) {
