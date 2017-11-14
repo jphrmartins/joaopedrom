@@ -2,76 +2,76 @@
 <html lang="en" ng-app="calculadora">
 
 <head>
-    <title>Todo List | Angular JS</title>
+    <title>Todo | Angular JS</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="fav/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="fav/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="fav/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="fav/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="fav/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="fav/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="fav/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="fav/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="fav/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="fav/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="fav/favicon-16x16.png">
+    <link rel="manifest" href="fav/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./index.css" rel="stylesheet">
+    <link href="./css/index.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.min.js"></script>
+
 </head>
 
 <body>
     <div class="container">
         <div class="row">
             <section class="content">
-                <h1>Tarefas</h1>
+                <h1>Calculadora</h1>
                 <div class="col-md-8 col-md-offset-2">
                     <div class="panel panel-default">
-                        <div class="panel-body" ng-controller="principalController">
+                        <div class="panel-body">
                             <div>
                                 <div class="pull-left">
-                                    <div class="form-inline" style="margin-top:13px">
-                                        <label for="nomeTarefa">Nome tarefa:</label>
-                                        <input type="text" class="form-control" id="nomeTarefa" ng-model="tarefa.nome"/>
-                                        <input type="text" ng-model="tarefa.valor">
-                                        <input type="hidden" value="7" />
-                                    </div>
                                 </div>
                                 <div class="pull-right">
                                     <div class="btn-group">
-                                        <button class="btn btn-primary" ng-click="meuEvento(tarefa)">Incluir</button>
-                                        <a href="#!soma" class="btn btn-success btn-filter">soma</a>
+                                        <a href="#!soma" class="btn btn-success btn-filter">somar</a>
                                         <a href="#!subtrair" class="btn btn-warning btn-filter">subtrair</a>
-                                        <a href="#!cancelado" class="btn btn-danger btn-filter">Cancelado</a>
-                                        <a href="#!" class="btn btn-default btn-filter">Todos</a>
+                                        <a href="#!dividir" class="btn btn-danger btn-filter">dividir</a>
+                                        <a href="#!multiplicar" class="btn btn-primary">multiplicar</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="table-container" ng-view>
-                                
-                              </div>
+
                             </div>
                         </div>
                     </div>
                     <div class="content-footer">
-                        <p>
+                        <p id="fotter">
                             Page © - 2017 <br> Powered By Fundatec
                         </p>
-                    </div>
-                    <div ng-controller="calculadoraControl">
-                      <label for="ValorA">Valor A: </label>
-                      <input type="text" id="ValorA" ng-model="calculo.valorA">
-                      <label for="ValorB">Valor B: </label>
-                      <input type="text" id="ValorA" ng-model="calculo.valorB">
-                      <div>
-                        <button ng-click="somar(calculo)">somar</button>
-                        <button ng-click="dividir(calculo)">dividir</button>
-                        <button ng-click="multiplicar(calculo)">multiplicar</button>
-                        <button ng-click="subtrair(calculo)">subtrair</button>
-                      </div>
-                      <p>
-                        Resultado
-                      </p>
-                      <span> {{calculo.resultado}}</span>
                     </div>
                 </div>
             </section>
         </div>
     </div>
-    <script src="app.js"></script>
-    <script src="calculadora.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/soma.js"></script>
+    <script src="scripts/subtrair.js"></script>
+    <script src="scripts/dividir.js"></script>
+    <script src="scripts/multiplicar.js"></script>
+
 </body>
 
 </html>

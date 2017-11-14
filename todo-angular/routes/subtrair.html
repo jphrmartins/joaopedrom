@@ -1,0 +1,12 @@
+<div ng-controller='subtrair'>
+  <div>
+    <label for="ValorA">ValorA: </label>
+    <input type="text" name="ValorA" id="ValorA" ng-model="calculo.valorA">
+  </div>
+  <div>
+    <label for="ValorB">ValorB: </label>
+    <input type="text" name="ValorB" id="ValorB" ng-model="calculo.valorB">
+  </div>
+    <button type="button" class="btn btn-warning" id="botao" ng-click='subtrair(calculo)'>Calcular</button>
+    <p id="result"><b>Resultado:</b> {{calculo.resultado}}</p>
+</div>
