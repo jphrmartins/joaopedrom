@@ -1,0 +1,44 @@
+<div ng-controller="todosController">
+<table class="table table-striped table-hover table-responsive" >
+    <tbody >
+            <tr data-status="todos" ng-repeat="tarefa in todasTarefas">
+
+                <td>
+                    <button class="btn btn-success" ng-click="excluir(tarefa)">v</button>
+                    <button class="btn btn-danger" ng-click="cancelar(tarefa)">X</button>
+                </td>
+                <td>
+                    <div class="media">
+                        <img src="http://download.seaicons.com/download/i43415/oxygen-icons.org/oxygen/oxygen-icons.org-oxygen-status-mail-task.ico" class="media-photo"/>
+                    </div>
+                        <span class="media-meta pull-right" date-now="dd/MM/yyyy HH:mm:ss"></span>
+                        <p class="title">{{tarefa.titulo}}
+                        <span class="pull-right" id='{{tarefa.status}}'>({{tarefa.status}})</span>
+                        </p>
+                    <p class="summary">{{tarefa.descricao}}</p>
+                </td>
+            </tr>
+            
+    </tbody>
+</table>
+<div>
+    <button style="margin-bottom: 5px" ng-click="get()">get</button>
+</div>
+<div>
+    <input type="text" ng-model="objeto.nomeTarefa"/>
+    <div>
+        <label> 
+        concluida
+        <input type='checkbox'ng-click='mostra(objeto)' ng-model="objeto.concluida"/>
+    </label>
+    </div>
+    <button ng-click="post(objeto)">post</button>
+</div>
+<div>
+     <button ng-click="put(objeto)">put</button>
+</div>
+<div>
+     <button ng-click="delete(objeto)">delete</button>
+</div>
+
+</div>

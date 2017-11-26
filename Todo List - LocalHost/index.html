@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+	<html lang="en" ng-app="app">
+
+	<head>
+		<title>Todo List  | Angular JS</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">		
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+		<link href="Css/index.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+		 crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.min.js"></script>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="row">
+				<section class="content">
+					<h1>Minhas Tarefas</h1>
+					<div class="col-md-8 col-md-offset-2">
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<div class="pull-right">
+									<div class="btn-group">
+										<a href="#!excluido" class="btn btn-success btn-filter">Excluido</a>
+										<a href="#!pendente" class="btn btn-warning btn-filter">Pendente</a>
+										<a href="#!cancelado" class="btn btn-danger btn-filter">Cancelado</a>
+										<a href="#!todos" class="btn btn-default btn-filter">Todos</a>
+									</div>
+								</div>
+								<div style="margin:20px" ng-controller="principalController">
+									<div>
+										<label for="titulo">Titulo :</label>
+										<input style="margin-left: 28px" type="text" id="titulo" ng-model="tarefa.titulo"/>
+									</div>
+									<label for="descricao">Descrição :</label>
+									<input  type="text" id="descricao"  ng-model="tarefa.descricao"/>
+									<button class="btn" ng-click="incluirTarefa(tarefa)">Incluir</button>
+								</div>
+								<div class="table-container" ng-view>
+									
+								</div>
+							</div>
+						</div>
+						<div class="content-footer">
+							<p>
+								Page © - 2017 <br> Powered By Fundatec
+							</p>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+		<script src="App/app.js"></script>
+		<script src="App/taskServiceGet.js"></script>
+		<script src="App/taskServicePut.js"></script>
+		<script src="App/taskServicePost.js"></script>
+		<script src="App/taskServiceDelete.js"></script>
+		<script src="Scripts/principalController.js"></script>
+		<script src="Scripts/data.js"></script>
+		<script src="Scripts/pendente.js"></script>
+		<script src="Scripts/excluido.js"></script>
+		<script src="Scripts/cancelado.js"></script>
+		<script src="Scripts/todos.js"></script>
+		
+	</body>
+
+	</html>
