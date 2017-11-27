@@ -11,39 +11,49 @@
                 }
             });
         }
-        $scope.post = function(objeto){ 
+        $scope.post = function(objeto){
             taskServiceGet.obterTarefa().then(function(response){
                 objeto.id = response.data.length + 1;
-                taskServicePost.empurrarTarefa(objeto).then(function(response){
-                    console.log(response.status);
-                    $scope.objeto = {"id": 0, "nomeTarefa": '', 'concluida': false};
-                });            
+            }).then(function(){
+              taskServicePost.empurrarTarefa(objeto).then(function (response) {
+                console.log(response.status);
+                $scope.objeto = {"id": objeto.id, "nomeTarefa": '', 'concluida': false}
+              });
             });
         }
         $scope.put = function(objeto){
+          var tarefas;
             taskServiceGet.obterTarefa().then(function(response){
-                var tarefas = response.data;
+                tarefas = response.data;
+            })
+            .then(function (){
                 for (var i = 0; i < tarefas.length; i++) {
                     if(objeto.nomeTarefa === tarefas[i].nomeTarefa){
                         objeto.id = tarefas[i].id;
-                        taskServicePut.atualizarTarefa(objeto).then(function(response){
-                            console.log(response.status);
-                        });
+                        break;
                     }
                 }
-            });
-        }
+                taskServicePut.atualizarTarefa(objeto).then(function(response){
+                    console.log(response.status);
+                });
+            });  
+        };
+
         $scope.delete = function (objeto) {
-            /*taskServiceGet.obterTarefa().then(function(response){
-                var tarefas = response.data;
+            var tarefas
+            taskServiceGet.obterTarefa().then(function (response) {
+                tarefas = response.data;
+            })
+            .then(function () {
                 for (var i = 0; i < tarefas.length; i++) {
-                    if(o-bjeto.nomeTarefa === tarefas[i].nomeTarefa){
-                        
+                    if(objeto.nomeTarefa === tarefas[i].nomeTarefa){
+                        objeto.id = tarefas[i].id;
+                        break;
                     }
                 }
-            })*/
-            taskServiceDelete.deletarTarefa().then(function(response){
-                console.log('apagou', response.status);
+                taskServiceDelete.deletarTarefa(objeto.id).then(function (response) {
+                    console.log(response.status);
+                })
             });
         }
 
